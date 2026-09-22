@@ -9,6 +9,13 @@
 async function setup() {
   createCanvas(windowWidth, windowHeight);
 }
+function mtnrange(startX, startY, gap,height,heightvariance,widthvariance) {
+  for (let i = 0; i >= 10; i ++) {
+    fill("lightgrey");
+    triangle(startX, startY, startX / 2 +gap, height+random(0,heightvariance), startX+random(0,widthvariance) + gap, startY);
+    startX += gap;  
+  }
+}
 
 function draw() {
   background("black",220);
@@ -16,12 +23,10 @@ function draw() {
   fill("lightgray");
   noStroke();
   // mouse related variables.
-  triangle(500,height/2,350,height/2-400,200,height/2);
-  triangle(350,height/2,450,height/2-350,500,height/2);
-  triangle(350,height/2+35,550,height/2-450,645,height/2);
-  triangle(350,height/2+15,650,height/2-230,750,height/2);
-  fill("tan");
-  rect(1500,600,200,100);
+  mtnrange(0,700,100,200,200,300);
   fill("grey");
-  circle(1200,2300,3500);
+  circle(1200,3200,5000);
+  fill("tan");
+  rect(1500,650,200,100);
+  
 }
